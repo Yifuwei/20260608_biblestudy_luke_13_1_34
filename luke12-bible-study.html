@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>路加福音 12:1–34 | 团契查经讲稿</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1c2b1e;
+    --ink-light: #3a4f3c;
+    --parchment: #f7f3eb;
+    --parchment-dark: #ede8dc;
+    --parchment-deep: #e2dace;
+    --gold: #9a7b3a;
+    --gold-light: #c9a84c;
+    --gold-pale: #f5ecd3;
+    --sage: #4a6741;
+    --sage-light: #e8efe6;
+    --rust: #7a3b2e;
+    --rust-light: #f5e9e6;
+    --blue-ink: #2c3e6b;
+    --blue-light: #e8edf5;
+    --radius: 6px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    min-height: 100vh;
+  }
+
+  /* ---- TEXTURE OVERLAY ---- */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(154,123,58,0.04) 28px, rgba(154,123,58,0.04) 29px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ---- SIDEBAR NAV ---- */
+  .sidebar {
+    position: fixed;
+    left: 0; top: 0; bottom: 0;
+    width: 240px;
+    background: var(--ink);
+    padding: 2rem 0;
+    z-index: 100;
+    overflow-y: auto;
+    border-right: 3px solid var(--gold);
+  }
+
+  .sidebar-logo {
+    padding: 0 1.5rem 1.5rem;
+    border-bottom: 1px solid rgba(154,123,58,0.3);
+    margin-bottom: 1rem;
+  }
+
+  .sidebar-logo .eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--gold-light);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .sidebar-logo h1 {
+    font-family: 'EB Garamond', 'Noto Serif SC', serif;
+    font-size: 17px;
+    color: var(--parchment);
+    line-height: 1.4;
+    font-weight: 400;
+  }
+
+  .sidebar-logo .verse-ref {
+    font-size: 11px;
+    color: var(--gold);
+    margin-top: 4px;
+  }
+
+  .nav-group { margin-bottom: 0.25rem; }
+
+  .nav-group-label {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(154,123,58,0.7);
+    padding: 0.75rem 1.5rem 0.25rem;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.55rem 1.5rem;
+    color: rgba(247,243,235,0.65);
+    text-decoration: none;
+    font-size: 13px;
+    transition: all 0.2s;
+    border-left: 3px solid transparent;
+  }
+
+  .nav-link:hover {
+    color: var(--parchment);
+    background: rgba(154,123,58,0.1);
+    border-left-color: rgba(154,123,58,0.4);
+  }
+
+  .nav-link.active {
+    color: var(--gold-light);
+    background: rgba(154,123,58,0.15);
+    border-left-color: var(--gold-light);
+  }
+
+  .nav-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+    flex-shrink: 0;
+    opacity: 0.6;
+  }
+
+  /* ---- MAIN ---- */
+  .main {
+    margin-left: 240px;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ---- HERO ---- */
+  .hero {
+    background: var(--ink);
+    padding: 4rem 3rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '路';
+    position: absolute;
+    right: 2rem; top: -1rem;
+    font-family: 'Noto Serif SC', serif;
+    font-size: 220px;
+    font-weight: 700;
+    color: rgba(154,123,58,0.06);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .hero h2 {
+    font-family: 'EB Garamond', 'Noto Serif SC', serif;
+    font-size: 42px;
+    color: var(--parchment);
+    line-height: 1.2;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero h2 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-sub {
+    font-size: 14px;
+    color: rgba(247,243,235,0.5);
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-sub span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .hero-sub span::before {
+    content: '◆';
+    font-size: 8px;
+    color: var(--gold);
+  }
+
+  .hero-tagline {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(154,123,58,0.2);
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: rgba(247,243,235,0.6);
+    line-height: 1.7;
+  }
+
+  .hero-tagline strong { color: var(--gold-light); font-style: normal; }
+
+  /* ---- CONTENT ---- */
+  .content {
+    padding: 2.5rem 3rem 4rem;
+    max-width: 880px;
+  }
+
+  /* ---- SECTION ---- */
+  .section { display: none; }
+  .section.active { display: block; }
+
+  /* ---- THEME BANNER ---- */
+  .theme-banner {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: var(--radius);
+    margin-bottom: 2rem;
+    border: 1px solid;
+  }
+
+  .theme-banner.purple { background: #f0eefc; border-color: #b8b0e8; }
+  .theme-banner.amber  { background: var(--gold-pale); border-color: #c9a84c; }
+  .theme-banner.green  { background: var(--sage-light); border-color: #7aaa6a; }
+
+  .theme-icon {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+    font-family: 'EB Garamond', serif;
+    font-weight: 600;
+  }
+
+  .t1 { background: #534AB7; color: white; }
+  .t2 { background: var(--gold); color: white; }
+  .t3 { background: var(--sage); color: white; }
+
+  .theme-banner h2 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 3px;
+  }
+
+  .theme-banner p { font-size: 13px; color: var(--ink-light); }
+
+  /* ---- CARDS ---- */
+  .card {
+    background: white;
+    border: 1px solid var(--parchment-deep);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(28,43,30,0.04);
+  }
+
+  .card-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--parchment-dark);
+  }
+
+  .badge {
+    font-size: 10px;
+    padding: 2px 9px;
+    border-radius: 20px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  .badge-obs { background: var(--blue-light); color: var(--blue-ink); }
+  .badge-int { background: var(--sage-light); color: var(--sage); }
+  .badge-app { background: var(--gold-pale); color: var(--rust); }
+  .badge-bg  { background: #f0eefc; color: #3c348a; }
+  .badge-uk  { background: #e8f0f8; color: #1a3a6b; }
+  .badge-q   { background: var(--rust-light); color: var(--rust); }
+
+  /* ---- VERSE BLOCK ---- */
+  .verse {
+    border-left: 4px solid var(--gold);
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+    background: var(--gold-pale);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-family: 'Noto Serif SC', serif;
+    font-size: 14px;
+    color: #2a1f00;
+    line-height: 1.9;
+  }
+
+  .verse .ref {
+    font-size: 11px;
+    color: var(--gold);
+    margin-top: 6px;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-style: normal;
+  }
+
+  /* ---- BODY TEXT ---- */
+  .body-text {
+    font-size: 14px;
+    color: var(--ink-light);
+    line-height: 1.95;
+  }
+
+  .body-text + .body-text { margin-top: 0.75rem; }
+
+  /* ---- GREEK CHIP ---- */
+  .gk {
+    display: inline-block;
+    background: var(--sage-light);
+    color: var(--sage);
+    padding: 1px 8px;
+    border-radius: 3px;
+    font-style: italic;
+    font-size: 12px;
+    margin-left: 3px;
+  }
+
+  .hw {
+    background: #faefd4;
+    color: #5a3a00;
+    padding: 1px 7px;
+    border-radius: 3px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  /* ---- TENSION GRID ---- */
+  .tension {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 1rem 0;
+  }
+
+  .tension-item {
+    padding: 1rem;
+    border-radius: var(--radius);
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .tension-world { background: #fdf0ee; border: 1px solid #e8b8ae; color: var(--rust); }
+  .tension-gospel { background: var(--sage-light); border: 1px solid #9dbf92; color: #1e3d1a; }
+
+  .tension-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  /* ---- UK CALLOUT ---- */
+  .uk-callout {
+    background: var(--blue-light);
+    border: 1px solid #bfcde8;
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .uk-callout::before {
+    content: '🇬🇧';
+    position: absolute;
+    right: 12px; top: 12px;
+    font-size: 22px;
+    opacity: 0.5;
+  }
+
+  .uk-callout .uk-label {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--blue-ink);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .uk-callout p {
+    font-size: 13px;
+    color: #1a3060;
+    line-height: 1.8;
+  }
+
+  /* ---- DISCUSSION ---- */
+  .disc-q {
+    background: var(--parchment-dark);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.75rem;
+    border-left: 3px solid var(--gold);
+  }
+
+  .disc-q.uk {
+    border-left-color: #3a6aaa;
+    background: var(--blue-light);
+  }
+
+  .disc-q-num {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+
+  .disc-q.uk .disc-q-num { color: var(--blue-ink); }
+
+  .disc-q-text {
+    font-size: 14px;
+    color: var(--ink);
+    line-height: 1.8;
+  }
+
+  /* ---- OIA STEPS ---- */
+  .oia-step {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 10px;
+    align-items: flex-start;
+  }
+
+  .oia-num {
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 600;
+    flex-shrink: 0; margin-top: 2px;
+    color: white;
+  }
+
+  /* ---- OVERVIEW GRID ---- */
+  .overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    margin: 1rem 0;
+  }
+
+  .time-card {
+    background: var(--parchment-dark);
+    border-radius: var(--radius);
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid var(--parchment-deep);
+  }
+
+  .time-num { font-size: 24px; font-weight: 500; color: var(--ink); }
+  .time-label { font-size: 12px; color: var(--ink-light); margin-top: 2px; }
+
+  /* ---- PRAYER FRAME ---- */
+  .prayer {
+    background: var(--ink);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .prayer-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .prayer p {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--parchment);
+    line-height: 2;
+  }
+
+  .prayer .blank {
+    display: inline-block;
+    border-bottom: 1px solid var(--gold);
+    min-width: 80px;
+    color: var(--gold-light);
+  }
+
+  /* ---- DIVIDER ---- */
+  .divider {
+    height: 1px;
+    background: var(--parchment-deep);
+    margin: 1.25rem 0;
+  }
+
+  .sub-label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 1.25rem 0 0.6rem;
+    font-weight: 500;
+  }
+
+  /* ---- MOBILE ---- */
+  @media (max-width: 800px) {
+    .sidebar { display: none; }
+    .main { margin-left: 0; }
+    .hero { padding: 2rem 1.25rem; }
+    .hero h2 { font-size: 28px; }
+    .content { padding: 1.5rem 1.25rem 3rem; }
+    .tension { grid-template-columns: 1fr; }
+    .mobile-nav {
+      display: flex !important;
+      overflow-x: auto;
+      gap: 6px;
+      padding: 0.75rem 1.25rem;
+      background: var(--ink);
+      border-bottom: 1px solid rgba(154,123,58,0.3);
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+
+  .mobile-nav { display: none; }
+
+  .mobile-tab {
+    white-space: nowrap;
+    padding: 6px 14px;
+    font-size: 12px;
+    border: 1px solid rgba(154,123,58,0.4);
+    border-radius: 20px;
+    color: rgba(247,243,235,0.7);
+    background: transparent;
+    cursor: pointer;
+    font-family: 'Noto Sans SC', sans-serif;
+    transition: all 0.2s;
+  }
+
+  .mobile-tab.active {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: white;
+  }
+
+  /* ---- FOOTER ---- */
+  .footer {
+    border-top: 1px solid var(--parchment-deep);
+    padding: 2rem 3rem;
+    font-size: 12px;
+    color: #888;
+    font-style: italic;
+  }
+
+  @keyframes fadein {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section.active { animation: fadein 0.25s ease; }
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<nav class="sidebar" aria-label="查经导航">
+  <div class="sidebar-logo">
+    <div class="eyebrow">团契查经 · 带领人讲稿</div>
+    <h1>路加福音<br>真实、财富与焦虑</h1>
+    <div class="verse-ref">路加福音 12:1–34</div>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-label">总览</div>
+    <a href="#" class="nav-link active" onclick="show('overview',this)">
+      <span class="nav-dot"></span>讲稿总览与导入
+    </a>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-label">三大主题</div>
+    <a href="#" class="nav-link" onclick="show('theme1',this)">
+      <span class="nav-dot"></span>主题一：假冒为善
+    </a>
+    <a href="#" class="nav-link" onclick="show('theme2',this)">
+      <span class="nav-dot"></span>主题二：无知财主
+    </a>
+    <a href="#" class="nav-link" onclick="show('theme3',this)">
+      <span class="nav-dot"></span>主题三：忧虑与神国
+    </a>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-label">资源</div>
+    <a href="#" class="nav-link" onclick="show('discussion',this)">
+      <span class="nav-dot"></span>讨论问题汇总
+    </a>
+    <a href="#" class="nav-link" onclick="show('prayer',this)">
+      <span class="nav-dot"></span>祷告回应框架
+    </a>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-eyebrow">Luke 12:1–34 · 归纳式查经 OIA</div>
+    <h2>真实、财富<br>与<em>焦虑</em></h2>
+    <div class="hero-sub">
+      <span>路加福音 12:1–34</span>
+      <span>适用：英国大学生 / 研究生 / 职场青年</span>
+      <span>时长约 90 分钟</span>
+    </div>
+    <div class="hero-tagline">
+      「你们要防备法利赛人的<strong>酵</strong>，就是假冒为善……<br>
+      你的财宝在哪里，你的<strong>心</strong>也在那里。」
+      <div style="font-size:12px; margin-top:6px; color:rgba(247,243,235,0.35); font-style:normal;">路 12:1, 34</div>
+    </div>
+  </div>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav">
+    <button class="mobile-tab active" onclick="show('overview',this)">总览</button>
+    <button class="mobile-tab" onclick="show('theme1',this)">主题一</button>
+    <button class="mobile-tab" onclick="show('theme2',this)">主题二</button>
+    <button class="mobile-tab" onclick="show('theme3',this)">主题三</button>
+    <button class="mobile-tab" onclick="show('discussion',this)">讨论题</button>
+    <button class="mobile-tab" onclick="show('prayer',this)">祷告</button>
+  </div>
+
+  <div class="content">
+
+    <!-- ======== OVERVIEW ======== -->
+    <section id="overview" class="section active">
+
+      <div class="card">
+        <div class="card-title">📖 经文结构与带领思路</div>
+        <div class="body-text">本段经文（12:1–34）是耶稣在旅途中的一段连贯教导，在法利赛人的对立情绪达到高点之后，耶稣转向门徒群体说话。三段主题构成内在逻辑链条：</div>
+        <br>
+
+        <div style="display:flex; flex-direction:column; gap:10px; margin: 0.5rem 0 1rem;">
+          <div class="theme-banner purple">
+            <div class="theme-icon t1">①</div>
+            <div>
+              <h2 style="color:#26215C">假冒为善与无畏的见证（12:1–12）</h2>
+              <p>表里如一 vs. 社会面具 · 我们到底对谁负责？</p>
+            </div>
+          </div>
+          <div class="theme-banner amber">
+            <div class="theme-icon t2">②</div>
+            <div>
+              <h2 style="color:#412402">防备贪心与无知财主（12:13–21）</h2>
+              <p>财富偶像 · 累积的幻觉 · 在神面前枉然富足</p>
+            </div>
+          </div>
+          <div class="theme-banner green">
+            <div class="theme-icon t3">③</div>
+            <div>
+              <h2 style="color:#04342C">不要忧虑与先求神国（12:22–34）</h2>
+              <p>焦虑的神学根源 · 供应的应许 · 心与财宝的方向</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="body-text" style="padding:1rem; background:var(--parchment-dark); border-radius:var(--radius);">
+          三个主题共同回答一个根本问题：<strong>当安全感、身份与资源都取决于「外在表现」，人如何在神面前找到真实的自我与安稳？</strong>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">⏱ 时间分配建议（90 分钟）</div>
+        <div class="overview-grid">
+          <div class="time-card"><div class="time-num">10'</div><div class="time-label">破冰导入</div></div>
+          <div class="time-card"><div class="time-num">25'</div><div class="time-label">主题一</div></div>
+          <div class="time-card"><div class="time-num">25'</div><div class="time-label">主题二</div></div>
+          <div class="time-card"><div class="time-num">20'</div><div class="time-label">主题三</div></div>
+          <div class="time-card"><div class="time-num">10'</div><div class="time-label">祷告回应</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">🔥 破冰导入（10 分钟）</div>
+        <div class="body-text">用以下问题暖场，打开「表演性自我」的话题，为主题一做铺垫：</div>
+        <div class="disc-q" style="margin-top:0.75rem;">
+          <div class="disc-q-num">破冰问题</div>
+          <div class="disc-q-text">「你有没有在 Instagram、LinkedIn 或 WhatsApp Status 上，呈现了一个和你内心感受不完全一致的自己？那一刻你心里是什么感觉？」</div>
+        </div>
+        <div class="uk-callout" style="margin-top:0.75rem;">
+          <div class="uk-label">UK Context 英国语境</div>
+          <p>可以延伸到：大学Open Day时的「光鲜校园」印象 vs 真实宿舍生活；在国内父母面前装作一切顺利；在导师面前强撑自信却其实完全不知道论文方向在哪里。</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ======== THEME 1 ======== -->
+    <section id="theme1" class="section">
+
+      <div class="theme-banner purple">
+        <div class="theme-icon t1">①</div>
+        <div>
+          <h2 style="color:#26215C">主题一：防备假冒为善与无畏的见证</h2>
+          <p>路加福音 12:1–12 · 建议用时 25 分钟</p>
+        </div>
+      </div>
+
+      <!-- BACKGROUND -->
+      <div class="card">
+        <div class="card-title"><span class="badge badge-bg">背景</span>历史文化与希腊文背景</div>
+
+        <div class="sub-label">法利赛人是谁？</div>
+        <div class="body-text">法利赛人（约6,000人）是第一世纪犹太社会中最具影响力的宗教精英群体：他们掌握律法解释权、拥有会堂的话语权、在社区中享有极高地位。他们的问题不是缺乏宗教热忱，而是把信仰表演化——以神的名义积累社会资本。</div>
+
+        <div class="sub-label">「假冒为善」的希腊文</div>
+        <div class="body-text">
+          <span class="hw">ὑπόκρισις</span><span class="gk">hypokrisis</span>——原意是「戴面具的剧场演员」。古希腊演员用不同面具扮演不同角色。这个词进入基督教语境后，描述的是<strong>「活在神面前却只为人而演」</strong>的状态。
+        </div>
+
+        <div class="sub-label">「酵」的意象</div>
+        <div class="body-text">酵的特性：少量、隐蔽、渗透整体。耶稣用「酵」而非「毒药」，强调假冒为善的危险不在于戏剧性爆发，而在于<strong>静默的、系统性的腐蚀</strong>。它会在你都不自知的情况下，将你的内心与外在彻底分裂。</div>
+      </div>
+
+      <!-- OBSERVATION -->
+      <div class="card">
+        <div class="card-title"><span class="badge badge-obs">O 观察</span>经文观察</div>
+        <div class="verse">「有许多千万人聚集，甚至彼此践踏，耶稣开讲，先对门徒说：你们要防备法利赛人的酵，就是假冒为善。掩盖的事，没有不露出来的……」
+          <div class="ref">路加福音 12:1–2</div>
+        </div>
+        <div class="body-text"><strong>带领人引导观察：</strong></div>
+        <br>
+        <div class="oia-step">
+          <div class="oia-num" style="background:#534AB7">1</div>
+          <div class="body-text">耶稣在万人聚集中，<em>却先转向门徒</em>——这警戒是给跟随者的，不是给局外人的</div>
+        </div>
+        <div class="oia-step">
+          <div class="oia-num" style="background:#534AB7">2</div>
+          <div class="body-text">「掩盖的事没有不露出来」——宇宙级的透明性：没有任何形象管理可以在神面前持续运作</div>
+        </div>
+        <div class="oia-step">
+          <div class="oia-num" style="background:#534AB7">3</div>
+          <div class="body-text">12:4–5 的恐惧层级对比：「杀身体的」vs.「杀了以后有权柄丢在地狱里的」——耶稣在重新排序我们的惧怕对象</div>
+        </div>
+        <div class="oia-step">
+          <div class="oia-num" style="background:#534AB7">4</div>
+          <div class="body-text">12:6–7 麻雀意象：神的关注具体到了半分银子的麻雀——「你们比许多麻雀还贵重」</div>
+        </div>
+      </div>
+
+      <!-- INTERPRETATION -->
+      <div class="card">
+        <div class="card-title"><span class="badge badge-int">I 解释</span>经文解释：为什么不需要假冒？</div>
+        <div class="body-text">耶稣的论证逻辑：</div>
+        <br>
+        <div class="oia-step">
+          <div class="oia-num" style="background:#2c6e3a">1</div>
+          <div class="body-text"><strong>一切终将被揭露</strong>——伪装从长远看没有意义（v.2–3）</div>
+        </div>
+        <div class="oia-step">
+          <div class="oia-num" style="background:#2c6e3a">2</div>
+          <div class="body-text"><strong>真正的权威在神手中</strong>——人的评判不是终极评判，惧怕人胜过惧怕神，本身就是一种神学错位（v.4–5）</div>
+        </div>
+        <div class="oia-step">
+          <div class="oia-num" style="background:#2c6e3a">3</div>
+          <div class="body-text"><strong>神对你有具体的、个别的关注</strong>——你无需靠表演来证明自己的价值，因为你的价值已被神确认（v.6–7）</div>
+        </div>
+        <div class="oia-step">
+          <div class="oia-num" style="background:#2c6e3a">4</div>
+          <div class="body-text"><strong>圣灵的同在是终极倚靠</strong>——不是「完美准备」，而是「真实依靠」（v.11–12）</div>
+        </div>
+      </div>
+
+      <!-- APPLICATION -->
+      <div class="card">
+        <div class="card-title"><span class="badge badge-app">A 应用</span>精英环境中的「酵」</div>
+        <div class="tension">
+          <div class="tension-item tension-world">
+            <div class="tension-label">世界的逻辑</div>
+            你的价值 = 学校排名 + 论文发表 + LinkedIn职位 + 朋友圈呈现的留学生活。不断「管理」自我形象才能在竞争中生存。
+          </div>
+          <div class="tension-item tension-gospel">
+            <div class="tension-label">福音的逻辑</div>
+            「你们的头发也都被数过了」——神的关注是具体的、主动的，与你的表现无关。真实比光鲜更有价值。
+          </div>
+        </div>
+
+        <div class="uk-callout">
+          <div class="uk-label">🇬🇧 UK University Life — 英国大学场景</div>
+          <p>在英国大学的语境里，「假冒为善」可能以这些具体形式出现：</p>
+          <br>
+          <p>· <strong>在tutorial/seminar中假装读完了阅读材料</strong>，甚至还给出有自信的分析——但其实只看了摘要；</p>
+          <p>· 在国内家长的微信问候中说「一切都好」，但其实孤独、迷失方向；</p>
+          <p>· 在CU（Christian Union）团契里分享祷告请求，但刻意把最真实的挣扎留在心里；</p>
+          <p>· 在朋友圈/小红书展示London打卡，但回宿舍后其实非常低落；</p>
+          <p>· 在学术压力下向导师呈现「一切都在推进」，其实论文一个字都没写。</p>
+        </div>
+      </div>
+
+      <!-- DISCUSSION -->
+      <div class="card">
+        <div class="card-title"><span class="badge badge-q">讨论</span>讨论问题（主题一）</div>
+
+        <div class="disc-q">
+          <div class="disc-q-num">问题 1 · 通用</div>
+          <div class="disc-q-text">在你的学术或职业生活里，有没有一种「人设」是你一直在维护的？当它与你的内心状态不一致时，你用什么来平衡这种张力？信仰在这个张力中扮演什么角色？</div>
+        </div>
+
+        <div class="disc-q uk">
+          <div class="disc-q-num">问题 2 · 🇬🇧 UK 场景</div>
+          <div class="disc-q-text">在英国读书/工作，你有没有在「中国留学生身份」和「西方同学/导师面前的自我」之间感受到撕裂？这两个「你」背后，哪一个更真实？信仰帮助你找到统一的身份了吗？</div>
+        </div>
+
+        <div class="disc-q uk">
+          <div class="disc-q-num">问题 3 · 🇬🇧 恐惧层级</div>
+          <div class="disc-q-text">耶稣说「不要怕那杀身体的」。对你而言，在英国的生活里，什么是你真正惧怕的评判？是导师的评价、签证身份、父母的期待、还是同学的眼光？你的「恐惧排行榜」第一位是谁？</div>
+        </div>
+
+        <div class="disc-q">
+          <div class="disc-q-num">问题 4 · 见证</div>
+          <div class="disc-q-text">「在人面前认我」在你所在的大学或职场环境里具体意味着什么？有没有一个场合你刻意回避承认自己是基督徒——在pub night、实验室、还是group chat里？那背后的驱动是什么？</div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ======== THEME 2 ======== -->
+    <section id="theme2" class="section">
+
+      <div class="theme-banner amber">
+        <div class="theme-icon t2">②</div>
+        <div>
+          <h2 style="color:#412402">主题二：防备贪心与无知财主的比喻</h2>
+          <p>路加福音 12:13–21 · 建议用时 25 分钟</p>
+        </div>
+      </div>
+
+      <!-- BACKGROUND -->
+      <div class="card">
+        <div class="card-title"><span class="badge badge-bg">背景</span>历史文化与希腊文背景</div>
+
+        <div class="sub-label">当时的遗产继承制度</div>
+        <div class="body-text">12:13 中有人请求耶稣「叫我兄弟和我分家业」。按摩西律法（申 21:17），长子得双倍份额。罗马统治下的巴勒斯坦，产业纠纷极为普遍，拉比常被请来仲裁。<strong>这人的问题不是请求本身，而是他把耶稣降格为「产权仲裁员」——工具性地使用神。</strong></div>
+
+        <div class="sub-label">「仓房」的意象</div>
+        <div class="body-text">
+          「仓房」<span class="hw">ἀποθήκη</span><span class="gk">apotheke</span> 不只是储粮处，更是财富与地位的具象化符号——类似今天的存款账户余额、期权、学历证书、或投资组合截图。财主说「我要拆旧仓，另盖更大的」——这是把安全感建立在<strong>不断扩容的物质容量</strong>上。
+        </div>
+
+        <div class="sub-label">「在神面前枉然富足」的希腊文</div>
+        <div class="body-text">
+          <span class="hw">πλουτέω εἰς θεόν</span><span class="gk">plouteo eis theon</span>——「向着神而富」，描述一个人的生命方向是否对准神的价值系统。这与财产数字无关，而是一个<strong>朝向问题</strong>：你的积累，是为了谁、指向哪里？
+        </div>
+      </div>
+
+      <!-- OBSERVATION -->
+      <div class="card">
+        <div class="card-title"><span class="badge badge-obs">O 观察</span>经文观察</div>
+        <div class="verse">「神却说：无知的人哪，今夜必要你的灵魂；你所预备的，要归谁呢？凡为自己积财，在神面前却不富足的，也是这样。」
+          <div class="ref">路加福音 12:20–21</div>
+        </div>
+        <div class="body-text"><strong>带领人引导观察：</strong></div>
+        <br>
+        <div class="oia-step">
+          <div class="oia-num" style="background:#9a7b3a">1</div>
+          <div class="body-text">神称他「无知」——希腊文 <span class="hw">ἄφρων</span><span class="gk">aphron</span>，即「缺乏辨别力」，不是道德谴责意义上的「坏人」，而是智慧层面的盲目</div>
+        </div>
+        <div class="oia-step">
+          <div class="oia-num" style="background:#9a7b3a">2</div>
+          <div class="body-text">财主的独白中出现<strong>六个「我」</strong>——「我要……我的粮……我的财物……我的灵魂……」他的世界完全自我封闭</div>
+        </div>
+        <div class="oia-step">
+          <div class="oia-num" style="background:#9a7b3a">3</div>
+          <div class="body-text">他从未提及神、他人或义务——他的规划系统里没有「关系」维度</div>
+        </div>
+        <div class="oia-step">
+          <div class="oia-num" style="background:#9a7b3a">4</div>
+          <div class="body-text">神说「今夜」——不给任何缓冲时间；这正是比喻的震撼所在：他以为自己掌控了时间线</div>
+        </div>
+      </div>
+
+      <!-- INTERPRETATION -->
+      <div class="card">
+        <div class="card-title"><span class="badge badge-int">I 解释</span>经文解释</div>
+        <div class="body-text">这个比喻的核心诊断不是「有钱」，而是<strong>「把人生安全感建立在财富持续增长的能力上」</strong>。</div>
+        <div class="divider"></div>
+        <div class="body-text">注意比喻的起因：这不是一个罪大恶极的人，而是一个<strong>丰收之后做合理规划的农夫</strong>。他的三重错误是：</div>
+        <br>
+        <div class="oia-step">
+          <div class="oia-num" style="background:#7a3b2e">1</div>
+          <div class="body-text">把「足够」的标准不断上移——每次达到目标后又新设目标，无法止步</div>
+        </div>
+        <div class="oia-step">
+          <div class="oia-num" style="background:#7a3b2e">2</div>
+          <div class="body-text">把累积本身当成目的——而非把累积当作服事的工具</div>
+        </div>
+        <div class="oia-step">
+          <div class="oia-num" style="background:#7a3b2e">3</div>
+          <div class="body-text">完全遗忘了「灵魂」的维度——物质规划取代了灵魂的滋养</div>
+        </div>
+      </div>
+
+      <!-- APPLICATION -->
+      <div class="card">
+        <div class="card-title"><span class="badge badge-app">A 应用</span>英国语境中的「财务焦虑与财富执念」</div>
+        <div class="tension">
+          <div class="tension-item tension-world">
+            <div class="tension-label">当代叙事</div>
+            「先搞钱，再谈理想。」财务自由是终极安全感来源。在英国毕业后留下、拿到高薪工作、买房——这条路是唯一体面的选择。
+          </div>
+          <div class="tension-item tension-gospel">
+            <div class="tension-label">比喻的诊断</div>
+            安全感建立在「我的仓房足够大」上，这是神学谬误——它假设生命的终局完全在自己的财务能力手中。
+          </div>
+        </div>
+
+        <div class="uk-callout">
+          <div class="uk-label">🇬🇧 UK University Life — 英国大学场景</div>
+          <p>这个比喻直接触碰英国留学生群体的现实压力：</p>
+          <br>
+          <p>· <strong>毕业签证（Graduate Route）的两年倒计时</strong>：「必须在签证到期前找到sponsorship工作，否则一切归零」——这种生存焦虑驱使一切选择只以工资和PR路径为导向；</p>
+          <p>· <strong>伦敦租金现实</strong>：一个人住Zone 2单间月租£1,800+，「存钱」本身变成了一场不可能完成的战役，「财务自由」的目标线不断后移；</p>
+          <p>· <strong>对国内父母的「投资回报」压力</strong>：家里砸了几十万送你出来，「你的收入必须对得起学费」的隐形逻辑；</p>
+          <p>· <strong>FIRE文化与小红书「躺平」焦虑的交叉地带</strong>：一边被告知要早退休、资产配置，一边又不知道明年还在不在英国；</p>
+          <p>· <strong>研究生/博士生的奖学金困境</strong>：Stipend根本覆盖不了生活成本，却不知道是该坚持学术路还是转industry。</p>
+        </div>
+      </div>
+
+      <!-- DISCUSSION -->
+      <div class="card">
+        <div class="card-title"><span class="badge badge-q">讨论</span>讨论问题（主题二）</div>
+
+        <div class="disc-q">
+          <div class="disc-q-num">问题 1 · 通用</div>
+          <div class="disc-q-text">如果你诚实地看自己的财务规划与生涯目标，里面有多少是出于「安全感」，有多少是出于「为神的国使用资源」？你认为两者之间的边界在哪里？</div>
+        </div>
+
+        <div class="disc-q uk">
+          <div class="disc-q-num">问题 2 · 🇬🇧 签证与留英压力</div>
+          <div class="disc-q-text">在英国的签证/留英压力下，你有没有发现自己的职业选择完全被「移民路径」和「工资水平」所主导，以至于把「神在哪里呼召我」这个问题完全搁置了？这对你的信仰生活产生了什么影响？</div>
+        </div>
+
+        <div class="disc-q uk">
+          <div class="disc-q-num">问题 3 · 🇬🇧 父母投资的压力</div>
+          <div class="disc-q-text">许多英国留学生背负着家庭巨额投资的期待。「我的收入必须对得起这笔学费」这个逻辑，在多大程度上塑造了你对金钱和成功的定义？你怎么看待这种压力与「在神面前富足」之间的张力？</div>
+        </div>
+
+        <div class="disc-q">
+          <div class="disc-q-num">问题 4 · 「六个我」自检</div>
+          <div class="disc-q-text">财主的独白全是「我」——「我的仓、我的粮、我的灵魂」。回顾你最近一个月做的最重大的一个决定，那个决定里有没有神的位置、他人的维度、或永恒的眼光？</div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ======== THEME 3 ======== -->
+    <section id="theme3" class="section">
+
+      <div class="theme-banner green">
+        <div class="theme-icon t3">③</div>
+        <div>
+          <h2 style="color:#04342C">主题三：不要忧虑，先求神的国</h2>
+          <p>路加福音 12:22–34 · 建议用时 20 分钟</p>
+        </div>
+      </div>
+
+      <!-- BACKGROUND -->
+      <div class="card">
+        <div class="card-title"><span class="badge badge-bg">背景</span>历史文化背景</div>
+
+        <div class="sub-label">「渡鸦」——刻意选择不洁之鸟</div>
+        <div class="body-text">路加用「渡鸦」<span class="hw">κόραξ</span><span class="gk">korax</span>（利未记11章列为不洁之鸟，不可食用）——即便是仪式上最「无价值」的受造物，神也养活它们。<strong>这是刻意的：神的供应覆盖了社会体系里连「资格」都没有的存在。</strong></div>
+
+        <div class="sub-label">「所罗门的荣华」</div>
+        <div class="body-text">所罗门是以色列财富与智慧的顶峰：圣殿金碧辉煌、衣袍极尽华美。耶稣说野地的百合花「比所罗门的荣华更美」——这是对人类文明之最高成就的神学评注：<strong>神的创造超越了人类建构的最极致的美丽。</strong></div>
+
+        <div class="sub-label">「小群」的处境</div>
+        <div class="body-text">12:32「小群」——跟随耶稣的门徒，许多人放弃了稳定职业。「你们的父乐意把国赐给你们」是在罗马高压统治与极度经济不稳定背景下说出的宣告——<strong>不是对忧虑的否认，而是对神主权的真实邀请。</strong></div>
+      </div>
+
+      <!-- OBSERVATION -->
+      <div class="card">
+        <div class="card-title"><span class="badge badge-obs">O 观察</span>经文观察</div>
+        <div class="verse">「你们不要求吃什么、喝什么，也不要挂心；这都是外邦人所求的。你们必须用这些东西，你们的父是知道的。你们只要求他的国，这些东西就必加给你们了。」
+          <div class="ref">路加福音 12:29–31</div>
+        </div>
+        <div class="body-text"><strong>带领人引导观察：</strong></div>
+        <br>
+        <div class="oia-step">
+          <div class="oia-num" style="background:#0F6E56">1</div>
+          <div class="body-text">「不要忧虑」<span class="hw">μὴ μεριμνᾶτε</span><span class="gk">me meriminate</span>——命令式，但紧接着给出了<strong>具体理由</strong>，不是空洞的「别担心」</div>
+        </div>
+        <div class="oia-step">
+          <div class="oia-num" style="background:#0F6E56">2</div>
+          <div class="body-text">「你们的生命胜于饮食，身体胜于衣裳」——耶稣<strong>承认</strong>这些需求是真实的，没有否定物质现实</div>
+        </div>
+        <div class="oia-step">
+          <div class="oia-num" style="background:#0F6E56">3</div>
+          <div class="body-text">「外邦人所求的」——忧虑是<strong>没有神的世界里的理性回应</strong>；对门徒而言，同样的忧虑就变成了一种信仰声明</div>
+        </div>
+        <div class="oia-step">
+          <div class="oia-num" style="background:#0F6E56">4</div>
+          <div class="body-text">12:34「你的财宝在哪里，你的心也在那里」——<strong>财宝决定心的方向</strong>，而非反之；这是一个关于生命重心的诊断工具</div>
+        </div>
+      </div>
+
+      <!-- INTERPRETATION -->
+      <div class="card">
+        <div class="card-title"><span class="badge badge-int">I 解释</span>经文解释：忧虑是神学问题</div>
+        <div class="body-text">这段经文常被误读为「不需要理财规划」或「贫穷才属灵」。耶稣的逻辑更精准：</div>
+        <br>
+        <div class="oia-step">
+          <div class="oia-num" style="background:#2c6e3a">1</div>
+          <div class="body-text"><strong>忧虑的本质是神学问题</strong>，不只是心理健康问题——它表达了「神可能不够可靠」的深层信念</div>
+        </div>
+        <div class="oia-step">
+          <div class="oia-num" style="background:#2c6e3a">2</div>
+          <div class="body-text"><strong>焦虑是一种幻觉</strong>——v.25「哪一个能用思虑使寿数多加一刻呢？」掌控感本身是有限的</div>
+        </div>
+        <div class="oia-step">
+          <div class="oia-num" style="background:#2c6e3a">3</div>
+          <div class="body-text"><strong>「先求神国」是优先级重构</strong>——不是否认物质需求，而是承认神是最终的供应者</div>
+        </div>
+        <div class="oia-step">
+          <div class="oia-num" style="background:#2c6e3a">4</div>
+          <div class="body-text"><strong>「变卖所有的、散给人」</strong>——当身份不再依附于资产，你才真正获得自由（v.33）</div>
+        </div>
+      </div>
+
+      <!-- APPLICATION -->
+      <div class="card">
+        <div class="card-title"><span class="badge badge-app">A 应用</span>英国留学生的存在性焦虑</div>
+        <div class="tension">
+          <div class="tension-item tension-world">
+            <div class="tension-label">留学生的焦虑清单</div>
+            论文写不出来、毕业后签证到期、不知道要不要留英还是回国、父母的期待、身边同学已经找到好工作、英国经济下行找工作越来越难……
+          </div>
+          <div class="tension-item tension-gospel">
+            <div class="tension-label">12章的应答</div>
+            你的父知道你需要这些。忧虑一刻也不能延长你的生命。先求神的国，是重新校准生命GPS——不是无视现实，而是在更大的框架下看现实。
+          </div>
+        </div>
+
+        <div class="uk-callout">
+          <div class="uk-label">🇬🇧 UK University Life — 英国大学场景</div>
+          <p>可以停留在 v.25 「哪一个能用思虑使寿数多加一刻？」这句话对于长期焦虑的留学生有极大解放力：</p>
+          <br>
+          <p>· <strong>学业焦虑</strong>：dissertation deadline、exam season的失眠夜；在英国学术体系下，很多学生第一次遭遇真实的学业挫败感（国内的「尖子生」在这里变成了普通学生）；</p>
+          <p>· <strong>身份认同焦虑</strong>：在英国既不完全属于「本地人」圈子，也开始和国内朋友疏远；无法完整地属于任何一个文化；</p>
+          <p>· <strong>Mental health的沉默文化</strong>：英国大学心理健康资源往往排队几个月，而华人文化里「不要给别人添麻烦」的自我压抑加剧了孤立感；</p>
+          <p>· <strong>毕业即失业的存在恐惧</strong>：「我花了这么多时间和金钱，如果找不到工作，我是不是失败了？」</p>
+          <p>· <strong>气候与节律的剥离</strong>：英国漫长阴暗的冬天、与家人时区相差8小时的生活节律，这些看似小事的现实累积成深层的孤独感。</p>
+        </div>
+      </div>
+
+      <!-- DISCUSSION -->
+      <div class="card">
+        <div class="card-title"><span class="badge badge-q">讨论</span>讨论问题（主题三）</div>
+
+        <div class="disc-q">
+          <div class="disc-q-num">问题 1 · 通用</div>
+          <div class="disc-q-text">你目前最大的忧虑是什么？当你把这个忧虑放在「你们的父知道你们需要这些」这句话旁边时，你内心有什么反应？是抗拒、平静、还是觉得这句话「不真实」？能说说那个感受背后的原因吗？</div>
+        </div>
+
+        <div class="disc-q uk">
+          <div class="disc-q-num">问题 2 · 🇬🇧 身份认同焦虑</div>
+          <div class="disc-q-text">在英国生活，你有没有经历过一种「哪里都不完全属于」的漂泊感——在英国你是「外国人」，回到国内又感觉和以前的朋友越来越陌生？信仰在这种身份漂泊中有没有给你一个「家」的感觉？还是这本身也是你的挣扎？</div>
+        </div>
+
+        <div class="disc-q uk">
+          <div class="disc-q-num">问题 3 · 🇬🇧 Mental Health</div>
+          <div class="disc-q-text">英国大学心理健康资源匮乏是真实问题，而华人文化又鼓励我们「自己扛着」。你有没有在这里经历过真正的低谷，却不知道可以向谁倾诉？在这个团契里，你有多少空间做「真实的自己」而非「表现良好的基督徒」？</div>
+        </div>
+
+        <div class="disc-q">
+          <div class="disc-q-num">问题 4 · 财宝与心</div>
+          <div class="disc-q-text">耶稣说「你的财宝在哪里，你的心也在那里」。如果一个不认识你的人看你过去三个月的时间分配、消费记录、和刷手机的内容，他会说你的「财宝」——也就是你真正在乎的东西——是什么？</div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ======== DISCUSSION ALL ======== -->
+    <section id="discussion" class="section">
+
+      <div class="card">
+        <div class="card-title">📋 全部讨论问题汇总</div>
+        <div class="body-text" style="margin-bottom:1rem;">共 12 道讨论题（含英国场景专题），可根据时间与群体特质选取 3–4 题深入讨论。</div>
+
+        <div class="sub-label" style="color:#534AB7">主题一：假冒为善（12:1–12）</div>
+        <div class="disc-q"><div class="disc-q-num">T1-Q1</div><div class="disc-q-text">在你的学术或职业生活里，有没有一种「人设」是你一直在维护的？当它与你的内心状态不一致时，你用什么来平衡这种张力？信仰在这个张力中扮演什么角色？</div></div>
+        <div class="disc-q uk"><div class="disc-q-num">T1-Q2 🇬🇧</div><div class="disc-q-text">在英国读书/工作，你有没有在「中国留学生身份」和「西方同学/导师面前的自我」之间感受到撕裂？这两个「你」背后，哪一个更真实？信仰帮助你找到统一的身份了吗？</div></div>
+        <div class="disc-q uk"><div class="disc-q-num">T1-Q3 🇬🇧</div><div class="disc-q-text">对你而言，在英国的生活里，什么是你真正惧怕的评判？是导师的评价、签证身份、父母的期待、还是同学的眼光？你的「恐惧排行榜」第一位是谁？</div></div>
+        <div class="disc-q"><div class="disc-q-num">T1-Q4</div><div class="disc-q-text">「在人面前认我」在你所在的大学或职场环境里具体意味着什么？有没有一个场合你刻意回避承认自己是基督徒？那背后的驱动是什么？</div></div>
+
+        <div class="sub-label" style="color:#9a7b3a; margin-top:1.25rem;">主题二：贪心与无知财主（12:13–21）</div>
+        <div class="disc-q"><div class="disc-q-num">T2-Q1</div><div class="disc-q-text">如果你诚实地看自己的财务规划与生涯目标，里面有多少是出于「安全感」，有多少是出于「为神的国使用资源」？两者之间的边界在哪里？</div></div>
+        <div class="disc-q uk"><div class="disc-q-num">T2-Q2 🇬🇧</div><div class="disc-q-text">在英国的签证/留英压力下，你有没有发现自己的职业选择完全被「移民路径」和「工资水平」主导，以至于把「神在哪里呼召我」完全搁置了？</div></div>
+        <div class="disc-q uk"><div class="disc-q-num">T2-Q3 🇬🇧</div><div class="disc-q-text">许多英国留学生背负着家庭巨额投资的期待。「我的收入必须对得起这笔学费」这个逻辑，在多大程度上塑造了你对金钱和成功的定义？</div></div>
+        <div class="disc-q"><div class="disc-q-num">T2-Q4</div><div class="disc-q-text">财主的独白全是「我」。回顾你最近一个月做的最重大决定，那个决定里有没有神的位置、他人的维度、或永恒的眼光？</div></div>
+
+        <div class="sub-label" style="color:#0F6E56; margin-top:1.25rem;">主题三：忧虑与先求神国（12:22–34）</div>
+        <div class="disc-q"><div class="disc-q-num">T3-Q1</div><div class="disc-q-text">你目前最大的忧虑是什么？当你把这个忧虑放在「你们的父知道你们需要这些」旁边时，你内心有什么反应？是抗拒、平静、还是觉得这句话「不真实」？</div></div>
+        <div class="disc-q uk"><div class="disc-q-num">T3-Q2 🇬🇧</div><div class="disc-q-text">在英国生活，你有没有经历过「哪里都不完全属于」的漂泊感？信仰在这种身份漂泊中有没有给你一个「家」的感觉？还是这本身也是你的挣扎？</div></div>
+        <div class="disc-q uk"><div class="disc-q-num">T3-Q3 🇬🇧</div><div class="disc-q-text">英国大学心理健康资源匮乏，而华人文化鼓励「自己扛」。你有没有在这里经历过真正的低谷，却不知道可以向谁倾诉？在这个团契里，你有多少空间做「真实的自己」？</div></div>
+        <div class="disc-q"><div class="disc-q-num">T3-Q4</div><div class="disc-q-text">「你的财宝在哪里，你的心也在那里」。如果有人看你过去三个月的时间分配、消费记录和手机使用记录，他会说你的「财宝」是什么？</div></div>
+      </div>
+
+    </section>
+
+    <!-- ======== PRAYER ======== -->
+    <section id="prayer" class="section">
+
+      <div class="card">
+        <div class="card-title">🙏 结束祷告回应框架</div>
+        <div class="body-text">带领人邀请成员安静 1–2 分钟，选择今天最触动自己的一句经文或一个问题，然后用以下框架祷告：</div>
+
+        <div class="prayer">
+          <div class="prayer-label">祷告框架</div>
+          <p>
+            主啊，我承认我在<span class="blank">　　　　　　</span>这件事上的<span class="blank">假冒 / 贪心 / 忧虑</span>。<br><br>
+            我愿意相信你是<span class="blank">　　　　　　</span>（诚实填入你正在学习信靠的那一面）。<br><br>
+            今天，我愿意在<span class="blank">　　　　　　</span>这一步上更真实地跟随你。<br><br>
+            奉耶稣的名，阿们。
+          </p>
+        </div>
+
+        <div class="body-text" style="margin-top:1.25rem;">
+          这个框架鼓励具体、诚实、可操作的回应，避免空泛的属灵语言。带领人可以先以自己为例，示范如何诚实填入，降低成员的心理门槛。
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">📝 查经后跟进建议</div>
+        <div class="body-text">对于在英国的华人团契，以下资源与行动可作为查经的延伸：</div>
+        <br>
+        <div class="oia-step">
+          <div class="oia-num" style="background:#534AB7">1</div>
+          <div class="body-text"><strong>本周行动</strong>：选择一件小事，在这件事上「不假冒」——可以是如实回答朋友「你还好吗」，可以是在团契分享一个真实的挣扎</div>
+        </div>
+        <div class="oia-step">
+          <div class="oia-num" style="background:#9a7b3a">2</div>
+          <div class="body-text"><strong>财务默想</strong>：记录一周的消费，在旁边问：「这笔钱的使用，是否反映了我对神国的先求？」</div>
+        </div>
+        <div class="oia-step">
+          <div class="oia-num" style="background:#0F6E56">3</div>
+          <div class="body-text"><strong>忧虑清单祷告</strong>：写下你当前最大的三个忧虑，每天早晨把它们带到神面前，观察一周内心的变化</div>
+        </div>
+        <div class="oia-step">
+          <div class="oia-num" style="background:#2c3e6b">4</div>
+          <div class="body-text"><strong>UK 特别关怀</strong>：如果有成员正经历签证压力、学业危机或心理健康困难，带领人私下跟进，不让任何人独自扛着</div>
+        </div>
+      </div>
+
+    </section>
+
+  </div><!-- end .content -->
+
+  <div class="footer">
+    路加福音 12:1–34 团契查经带领人讲稿 · 归纳式查经法（OIA）· 适用于英国大学华人学生团契 · 请自由使用与分享
+  </div>
+
+</main>
+
+<script>
+  function show(id, el) {
+    event.preventDefault();
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    document.querySelectorAll('.mobile-tab').forEach(t => t.classList.remove('active'));
+
+    if (el) el.classList.add('active');
+  }
+</script>
+</body>
+</html>
